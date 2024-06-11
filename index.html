@@ -1,8 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chá de Sítio - Lista de Presentes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
 <body>
-    <h1>Lixo do Krl</h1>
-    <p><h2><em>O que eles tem que eu não tenho</em></h2></p>
-</body>
 
+<div class="container">
+    <h1>Chá de Sítio - Lista de Presentes</h1>
+    <p>Confirme sua presença e escolha um presente da lista abaixo:</p>
+    <form action="confirmacao.php" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="presente">Escolha um presente:</label>
+        <select id="presente" name="presente">
+            <option value="Cadeiras de Praia">Cadeiras de Praia</option>
+            <option value="Churrasqueira Portátil">Churrasqueira Portátil</option>
+            <option value="Kit de Utensílios para Churrasco">Kit de Utensílios para Churrasco</option>
+            <option value="Rede de Descanso">Rede de Descanso</option>
+            <option value="Guarda-sol">Guarda-sol</option>
+        </select>
+
+        <input type="submit" value="Confirmar Presença">
+    </form>
+</div>
+
+</body>
 </html>
