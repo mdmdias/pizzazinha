@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chá de Sítio - Lista de Presentes</title>
+    <title>Meu Portfólio de Projetos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,72 +11,64 @@
             padding: 0;
             background-color: #f0f0f0;
         }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
         .container {
-            width: 80%;
-            margin: 20px auto;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .project {
             background-color: #fff;
             padding: 20px;
-            border-radius: 10px;
+            margin-bottom: 20px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        h1 {
+        footer {
+            background-color: #333;
+            color: #fff;
             text-align: center;
-            color: #333;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        label {
-            display: block;
-            font-weight: bold;
-        }
-        input[type="text"] {
+            padding: 1em 0;
+            position: fixed;
             width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
 
+<header>
+    <h1>Meu Portfólio de Projetos</h1>
+    <p>Veja abaixo alguns dos projetos que desenvolvi:</p>
+</header>
+
 <div class="container">
-    <h1>Chá de Sítio - Lista de Presentes</h1>
-    <p>Confirme sua presença e escolha um presente da lista abaixo:</p>
-    <form action="confirmacao.php" method="post">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+    <div class="project">
+        <h2>Projeto 1</h2>
+        <p>Descrição breve do projeto 1.</p>
+        <a href="#">Ver projeto</a>
+    </div>
 
-        <label for="presente">Escolha um presente:</label>
-        <select id="presente" name="presente">
-            <option value="Cadeiras de Praia">Cadeiras de Praia</option>
-            <option value="Churrasqueira Portátil">Churrasqueira Portátil</option>
-            <option value="Kit de Utensílios para Churrasco">Kit de Utensílios para Churrasco</option>
-            <option value="Rede de Descanso">Rede de Descanso</option>
-            <option value="Guarda-sol">Guarda-sol</option>
-        </select>
+    <div class="project">
+        <h2>Projeto 2</h2>
+        <p>Descrição breve do projeto 2.</p>
+        <a href="#">Ver projeto</a>
+    </div>
 
-        <input type="submit" value="Confirmar Presença">
-    </form>
+    <div class="project">
+        <h2>Projeto 3</h2>
+        <p>Descrição breve do projeto 3.</p>
+        <a href="#">Ver projeto</a>
+    </div>
 </div>
+
+<footer>
+    <p>&copy; 2024 Meu Portfólio de Projetos. Todos os direitos reservados.</p>
+</footer>
 
 </body>
 </html>
