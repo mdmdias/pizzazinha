@@ -1,74 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio de Projetos</title>
+    <title>Pizzazinha Do Manco</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Preto fosco */
+            color: #e0e0e0; /* Cinza claro */
+            text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
         }
         header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
+            background-color: #1c1c1c; /* Preto mais claro */
+            padding: 20px;
+        }
+        header h1 {
+            font-size: 3em;
+            color: #6A0DAD; /* Roxo vibrante */
+            margin: 0;
+        }
+        header p {
+            color: #a0a0a0; /* Cinza suave */
         }
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            margin: 50px auto;
             padding: 20px;
+            background-color: #1c1c1c; /* Preto mais claro */
+            border-radius: 15px;
+            width: 50%;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Sombra sutil */
         }
-        .project {
-            background-color: #fff;
-            padding: 20px;
+        form {
+            margin-top: 30px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 12px;
+            font-size: 1.2em;
             margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border: 2px solid #333333; /* Preto ainda mais escuro */
+            background-color: #2c2c2c; /* Cinza escuro */
+            color: #e0e0e0; /* Texto claro */
+            border-radius: 10px;
+            box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        input[type="text"]::placeholder {
+            color: #a0a0a0; /* Placeholder cinza suave */
+        }
+        input[type="submit"] {
+            background-color: #001f3f; /* Azul escuro */
+            color: #e0e0e0; /* Texto claro */
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #6A0DAD; /* Roxo vibrante no hover */
         }
         footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            margin-top: 50px;
+            background-color: #1c1c1c; /* Preto mais claro */
+            padding: 15px;
+            color: #a0a0a0;
+        }
+        #confirmation {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #6A0DAD; /* Mensagem roxa */
+        }
+
+        /* Estilo para efeito neon */
+        p.neon {
+            font-size: 1.5em;
+            color: #f2eff4; /* Cor roxa */
+            text-shadow: 0 0 5px #6A0DAD, 0 0 10px #6A0DAD, 
+                         0 0 20px #ff00ff, 0 0 30px #ff00ff, 
+                         0 0 40px #ff00ff, 0 0 50px #ff00ff;
         }
     </style>
+    <script>
+        function confirmarPresenca(event) {
+            event.preventDefault();
+            var nome = document.querySelector('input[name="nome"]').value;
+            var confirmationMessage = document.getElementById('confirmation');
+            
+            // Verifica se o nome começa com a letra 'B' (ignora maiúsculas/minúsculas)
+            if (nome.charAt(0).toLowerCase() === 'b') {
+                confirmationMessage.style.color = 'red'; // Mensagem em vermelho
+                confirmationMessage.innerText = "Você não foi convidado.";
+            } else if (nome) {
+                confirmationMessage.style.color = '#6A0DAD'; // Mensagem roxa para outros nomes
+                confirmationMessage.innerText = "Obrigado, " + nome + "! Sua presença foi confirmada.";
+            } else {
+                confirmationMessage.style.color = 'yellow'; // Mensagem de erro em amarelo
+                confirmationMessage.innerText = "Por favor, insira seu nome!";
+            }
+        }
+    </script>
 </head>
 <body>
 
-<header>
-    <h1>Meu Portfólio de Projetos</h1>
-    <p>Veja abaixo alguns dos projetos que desenvolvi:</p>
-</header>
+    <header>
+        <h1>Pizzazinha Do Manco</h1>
+        <p class="neon">NA MINHA CABEÇA, EU SOU O MELHOR!!</p1>
+    </header>
 
-<div class="container">
-    <div class="project">
-        <h2>Projeto 1</h2>
-        <p>Descrição breve do projeto 1.</p>
-        <a href="#">Ver projeto</a>
+    <div class="container">
+        <h2>Confirmar Presença</h2>
+        <p>Insira seu nome para confirmar sua presença no evento:</p> <!-- Texto com efeito neon -->
+        <form onsubmit="confirmarPresenca(event)">
+            <input type="text" name="nome" placeholder="Digite seu nome" required>
+            <br>
+            <input type="submit" value="Confirmar Presença">
+        </form>
+        <p id="confirmation"></p>
     </div>
 
-    <div class="project">
-        <h2>Projeto 2</h2>
-        <p>Descrição breve do projeto 2.</p>
-        <a href="#">Ver projeto</a>
-    </div>
-
-    <div class="project">
-        <h2>Projeto 3</h2>
-        <p>Descrição breve do projeto 3.</p>
-        <a href="#">Ver projeto</a>
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2024 Meu Portfólio de Projetos. Todos os direitos reservados.</p>
-</footer>
+    <footer>
+        <p>&copy; 2024 Pizzazinha Do Manco. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
